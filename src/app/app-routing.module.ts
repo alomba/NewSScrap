@@ -15,9 +15,9 @@ const routes: Routes = [
     path: '', 
     component: PagesComponent, 
     children: [
-      { path: '', redirectTo: '/dashboard', pathMatch: 'full'},
-      { path: 'dashboard', component: DashboardComponent}, 
+      { path: '', redirectTo: '/listnews', pathMatch: 'full'},
       { path: 'listnews', component: ListNewsComponent},
+      { path: 'dashboard', component: DashboardComponent}, 
     ]  
   }, 
 
