@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SubscripcionAPIService } from 'src/app/subscripcion-api.service';
 
 @Component({
   selector: 'app-list-news',
@@ -6,11 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['list-news.component.css'
   ]
 })
-export class ListNewsComponent implements OnInit {
+export class ListNewsComponent implements OnInit { 
 
-  constructor() { }
+  dataNew: any=[];
 
-  ngOnInit(): void {
+  constructor(private APIservice: SubscripcionAPIService) {
+    console.log('El componente se ha creado');
+  }  
+
+  ngOnInit(): void  {   
+    console.log('El componente se ha inicializado');
+    this.APIservice.getUsers().subscribe((response: any) =>this.dataNew= response);
   }
-
 }
